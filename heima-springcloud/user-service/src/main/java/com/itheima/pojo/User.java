@@ -1,4 +1,4 @@
-package com.ithiema.pojo;
+package com.itheima.pojo;
 
 import lombok.Data;
 import tk.mybatis.mapper.annotation.KeySql;
