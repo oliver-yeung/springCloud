@@ -2,11 +2,34 @@ server:
   port: 10086
 spring:
   application:
-    name: eureka-server
+    name: eureka-server  #服务id
 
 eureka:
   client:
     service-url:
-    defaultZone: http://127.0.0.1:10086/eureka
-    register-with-eureka: false
-    getch-registry: false
+      #eureka服务地址:如果是集群则是其他服务器地址,后面都要加/eureka
+      #defaultZone: ${defaultZone:http://127.0.0.1:10086/eureka}
+      #defaultZone: http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka
+      defaultZone: http://127.0.0.1:10086/eureka
+      #是否注册自己,自身不提供服务所以不注册
+    #register-with-eureka: false
+    #是否拉取服务
+    #getch-registry: false
+
+    #消费者启动会检查此参数的值如果为true,则会从EurekaServer服务列表拉取只读备份缓存在本地,并且每隔30s重新拉取更新
+    fetch-registry: true
+    registry-fetch-interval-seconds: 30  #修改更新拉取的时间
+
+
+  instance:
+    ip-address: 127.0.0.1  #使用ip地址注册,默认为localhost
+    prefer-ip-address: true
+    #心跳,每隔30s向注册中心发送心跳,如果90s内没有发送心跳，那么认为该服务宕机
+    #心跳的两个参数在生产环境不用修改，默认就行
+    lease-expiration-duration-in-seconds: 90 #服务失效时间,默认为90s
+    lease-renewal-interval-in-seconds: 30    #服务续约(renew)的间隔,默认30秒
+  server:
+    #失效剔除，默认每隔60s将清单中超过90s的没有续约的服务进行剔除
+    #eviction-interval-timer-in-ms: 3600 #单位是毫秒
+    enable-self-preservation: false #关闭自我保护机制(缺省为打开)
+

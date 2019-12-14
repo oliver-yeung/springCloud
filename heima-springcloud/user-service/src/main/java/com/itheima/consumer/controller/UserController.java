@@ -1,6 +1,6 @@
-package com.itheima.controller;
+package com.itheima.consumer.controller;
 
-import com.itheima.pojo.User;
+import com.itheima.consumer.pojo.User;
 import com.itheima.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

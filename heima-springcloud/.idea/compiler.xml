@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-server" />
         <module name="consumer-demo" />
+        <module name="heima-gateway" />
         <module name="user-service" />
       </profile>
     </annotationProcessing>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="consumer-demo" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="heima-gateway" options="-parameters" />
       <module name="heima-springcloud" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
