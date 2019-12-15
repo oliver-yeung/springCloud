@@ -9,14 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/cf")
+@RequestMapping("/users")
 public class ConsumerFeignController {
 
     @Autowired
     public UserClient userClient;
 
-    @GetMapping("/{id}")
-    public User queryById(@PathVariable Long id){
-        return userClient.queryById(id);
+    @GetMapping("/{username}")
+    public User queryById(@PathVariable("username") String username){
+
+        return userClient.findOrderByUser(username);
+
     }
 }

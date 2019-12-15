@@ -1,17 +1,16 @@
-package com.itheima.consumer.pojo;
+package com.itheima.consumer.consumer.pojo;
 
 import lombok.Data;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 //在编译阶段会根据注解自动生成对应的方法；data包含get/set/hashCode/equals/toString等方法
 @Data
 @Table(name = "tb_user")
-public class User implements Serializable {
+public class User {
 
     @Id
     //主键回填

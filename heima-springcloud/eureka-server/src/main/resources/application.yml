@@ -32,4 +32,3 @@ eureka:
     #失效剔除，默认每隔60s将清单中超过90s的没有续约的服务进行剔除
     #eviction-interval-timer-in-ms: 3600 #单位是毫秒
     enable-self-preservation: false #关闭自我保护机制(缺省为打开)
-

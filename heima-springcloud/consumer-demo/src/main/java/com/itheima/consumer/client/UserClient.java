@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface UserClient {
 
     //采用SpringMVC注解,Fegin根据注解帮我们生成url
-    @GetMapping("/user/{id}") //  "/user"是Feign需要拼接的可访问的地址
-    User queryById(@PathVariable("id") Long id);
+    @GetMapping("/user/{username}") //  "/user"是Feign需要拼接的可访问的地址
+    User findOrderByUser(@PathVariable("username") String username);
+
 }

@@ -7,18 +7,22 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-server" />
-        <module name="consumer-demo" />
         <module name="heima-gateway" />
+        <module name="config-server" />
+        <module name="order-service" />
+        <module name="consumer-demo" />
         <module name="user-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-parameters" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="consumer-demo" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="heima-gateway" options="-parameters" />
       <module name="heima-springcloud" options="-parameters" />
+      <module name="order-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
   </component>
