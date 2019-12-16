@@ -8,7 +8,7 @@
     <artifactId>heima-springcloud</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
+  <modules>
         <module>user-service</module>
         <module>consumer-demo</module>
         <module>eureka-server</module>
@@ -17,12 +17,12 @@
         <module>config-server</module>
     </modules>
 
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.5.RELEASE</version>
     </parent>
-
 
     <properties>
         <java.version>1.8</java.version>
@@ -37,20 +37,24 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-
                 <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
-            <!--通用mapper启动器-->
             <dependency>
                 <groupId>tk.mybatis</groupId>
                 <artifactId>mapper-spring-boot-starter</artifactId>
                 <version>${mapper.starter.version}</version>
             </dependency>
-            <!--mysql驱动-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-config</artifactId>
+                <version>2.1.1.RELEASE</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -58,11 +62,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>2.1.9.RELEASE</version>
         </dependency>
     </dependencies>
     <build>
@@ -73,5 +72,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

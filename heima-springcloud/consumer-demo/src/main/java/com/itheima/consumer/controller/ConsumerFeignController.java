@@ -17,7 +17,6 @@ public class ConsumerFeignController {
 
     @GetMapping("/{username}")
     public User queryById(@PathVariable("username") String username){
-
         return userClient.findOrderByUser(username);
 
     }
